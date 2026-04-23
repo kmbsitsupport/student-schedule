@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Program {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  sheetUrl  String
+  isPublic  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}

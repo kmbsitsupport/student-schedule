@@ -1,26 +1,67 @@
+@font-face {
+  font-family: "NAMU";
+  src: url("/fonts/NAMU-Pro.woff2") format("woff2"),
+       url("/fonts/NAMU-Pro.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "NAMU", "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --kmbs-black:       rgb(0, 0, 0);
+  --kmbs-graphite:    rgb(71, 76, 84);
+  --kmbs-silver:      rgb(223, 225, 227);
+  --kmbs-silver-4:    rgb(238, 238, 238);
+  --kmbs-hairline:    rgb(171, 171, 181);
+  --kmbs-white:       rgb(255, 255, 255);
+  --kmbs-blue-deep:   rgb(0, 85, 125);
+  --kmbs-blue:        rgb(44, 189, 238);
+  --kmbs-teal:        rgb(0, 174, 185);
+
+  --bg-page:    var(--kmbs-silver);
+  --bg-surface: var(--kmbs-white);
+  --bg-dark:    var(--kmbs-graphite);
+
+  --fg:         var(--kmbs-black);
+  --fg-2:       var(--kmbs-graphite);
+  --fg-muted:   rgba(0, 0, 0, 0.5);
+  --fg-on-dark: var(--kmbs-white);
+  --fg-on-dark-muted: rgba(255, 255, 255, 0.6);
+
+  --r-xs: 6px;
+  --r-sm: 12px;
+  --r-lg: 25px;
+  --r-xl: 30px;
+  --r-pill: 9999px;
+
+  --fs-h1:      32px;
+  --fs-h2:      28px;
+  --fs-h3:      24px;
+  --fs-h4:      18px;
+  --fs-body:    16px;
+  --fs-meta:    13px;
+  --fs-micro:   12px;
+
+  --tracking-meta:    0.02em;
+  --tracking-eyebrow: 0.06em;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  background: var(--bg-page);
+  color: var(--fg);
+  font-family: "NAMU", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
+
+* { box-sizing: border-box; }
+h1, h2, h3, h4, p { margin: 0; }
